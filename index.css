@@ -2,8 +2,12 @@ body {
   text-align: center;
 }
 .display {
-  width: 65%;
+  width: 85%;
+  height: 45%;
   margin: 8% auto;
+}
+.bootleg-twitter-button {
+  margin: 4px auto;
 }
 .tweet-link {
   text-decoration: none;

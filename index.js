@@ -3,7 +3,7 @@ $(document).ready(() => {
     {
       id: "1",
       quoteText:
-        "When you start to doubt yourself the real qorld will eat you alive.",
+        "When you start to doubt yourself the real world will eat you alive.",
       speaker: "Henry Rollins",
     },
     {
@@ -66,6 +66,15 @@ $(document).ready(() => {
   });
 
   $(document).on("click", "#tweet-quote", () => {
-    let tweetURL = "https://twitter.com/intent/tweet?text=" + quoteToShare;
+    let quoteToShare = $("#text").text().replace(/\s/g, "+");
+    let authorToShare = $("#author").text().replace(/\s/g, "+");
+
+    let tweetURL =
+      "https://twitter.com/intent/tweet?text=" +
+      quoteToShare +
+      " -" +
+      authorToShare;
+
+    $("#tweet-quote").attr("href", tweetURL);
   });
 });
