@@ -48,11 +48,24 @@ $(document).ready(() => {
     },
   ];
 
+  function loadRandomQuote() {
+    let quoteToDisplay = quotes[Math.floor(Math.random() * quotes.length)];
+
+    $("#text").text('"' + quoteToDisplay.quoteText + '"');
+
+    $("#author").text("- " + quoteToDisplay.speaker);
+  }
+  loadRandomQuote();
+
   $(document).on("click", "#new-quote", () => {
     let quoteToDisplay = quotes[Math.floor(Math.random() * quotes.length)];
 
-    $("#text").append(quoteToDisplay);
+    $("#text").text('"' + quoteToDisplay.quoteText + '"');
 
-    console.log(quoteToDisplay);
+    $("#author").text("- " + quoteToDisplay.speaker);
+  });
+
+  $(document).on("click", "#tweet-quote", () => {
+    let tweetURL = "https://twitter.com/intent/tweet?text=" + quoteToShare;
   });
 });
