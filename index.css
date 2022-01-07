@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+.display {
+  width: 65%;
+  margin: 8% auto;
+}
+.tweet-link {
+  text-decoration: none;
+  margin: 4px auto;
+}
