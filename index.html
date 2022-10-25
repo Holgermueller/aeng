@@ -11,18 +11,22 @@
   <body>
     <div id="canvas"></div>
     <script src="./index.js"></script>
-    <!-- <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.144.0/build/three.module.js"
-        }
-      }
-    </script> -->
 
     <script type="module">
-      import * as THREE from "https://unpkg.com/three@0.144.0/build/three.module.js";
+      import * as THREE from "https://unpkg.com/three/build/three.module.js";
 
       const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x808080);
+      const light = new THREE.PointLight(0x404040, 1, 100);
+      light.position.set(0, 10, 4);
+      light.castShadow = true;
+      scene.add(light);
+
+      light.shadow.mapSize.width = 512;
+      light.shadow.mapSize.height = 512;
+      light.shadow.camera.near = 0.5;
+      light.shadow.camera.far = 500;
+
       const camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
@@ -30,11 +34,35 @@
         1000
       );
 
-      const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector("#canvas"),
-      });
+      const canvas = document.getElementById("canvas");
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.shadowMap.enabled = true;
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
+
+      canvas.appendChild(renderer.domElement);
+
+      const geometry = new THREE.IcosahedronGeometry(1, 1, 1);
+      const material = new THREE.MeshBasicMaterial({ color: 0x33ccff });
+
+      const cube = new THREE.Mesh(geometry, material);
+      cube.castShadow = true;
+      cube.receiveShadow = true;
+      scene.add(cube);
+
+      camera.position.z = 5;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        cube.rotation.z += 0.01;
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
     </script>
   </body>
 </html>
