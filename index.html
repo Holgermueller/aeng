@@ -21,27 +21,32 @@
     <main>
       <div id="numberDisplay" class="number-display">&#127758;</div>
 
-      <form id="form">
-        <label for="numLength">Length:</label>
-        <input
-          type="number"
-          name="numLength"
-          id="numLength"
-          min="1"
-          value="1"
-        />
+      <form id="form" class="form">
+        <label for="numLength"
+          >Length:
+          <input
+            type="number"
+            name="numLength"
+            id="numLength"
+            min="1"
+            value="1"
+        /></label>
 
-        <label for="letters">Letters?</label>
-        <select name="letters" id="letters">
-          <option value="yes">Yes</option>
-          <option value="no" selected="selected">No</option>
-        </select>
+        <label for="letters"
+          >Letters?
+          <select name="letters" id="letters">
+            <option value="yes">Yes</option>
+            <option value="no" selected="selected">No</option>
+          </select></label
+        >
 
-        <label for="negative">Negative?</label>
-        <select name="negative" id="negative">
-          <option value="yes">Yes</option>
-          <option value="no" selected="selected">No</option>
-        </select>
+        <label for="negative"
+          >Negative?
+          <select name="negative" id="negative">
+            <option value="yes">Yes</option>
+            <option value="no" selected="selected">No</option>
+          </select></label
+        >
 
         <button onclick="generateNumber()" type="button" value="Submit">
           Submit
