@@ -1,8 +1,21 @@
 const generateNumber = () => {
   const numLength = document.getElementById("numLength").value;
-  const letters = document.getElementById("letters").value;
-  const dashes = document.getElementById("dashes").value;
-  const negative = document.getElementById("negative").value;
+  const hasLetters = document.getElementById("letters").value;
+  const isNegative = document.getElementById("negative").value;
+  let numbers = "0123456789";
+  let alpha = "qwertyuiopasdfghjklzxcvbnm";
 
-  console.log(numLength, letters, dashes, negative);
+  let chars = numbers;
+
+  isNegative === "yes" ? (chars += "-") : "";
+
+  let earthNumber = "";
+
+  for (let i = 0; i < numLength; i++) {
+    earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  console.log(isNegative, hasLetters);
+
+  document.getElementById("numberDisplay").innerHTML = earthNumber;
 };
