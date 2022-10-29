@@ -21,7 +21,7 @@
     <main>
       <div id="numberDisplay" class="number-display">Number display</div>
 
-      <form action="">
+      <form id="form">
         <label for="length"
           >Length
           <input type="number" name="length" id="length" min="1" />
@@ -51,7 +51,7 @@
           </select>
         </label>
 
-        <button type="submit">Submit</button>
+        <input onclick="generateNumber()" type="button" value="Submit" />
       </form>
     </main>
     <footer>&copy; 2022 Holger Mueller</footer>
