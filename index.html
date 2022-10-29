@@ -22,36 +22,36 @@
       <div id="numberDisplay" class="number-display">Number display</div>
 
       <form id="form">
-        <label for="length"
-          >Length
-          <input type="number" name="length" id="length" min="1" />
-        </label>
+        <label for="numLength">Length:</label>
+        <input
+          type="number"
+          name="numLength"
+          id="numLength"
+          min="1"
+          value="1"
+        />
 
-        <label for="letters"
-          >Letters?
-          <select name="letters" id="letters">
-            <option value="yes">Yes</option>
-            <option value="no" selected="selected">No</option>
-          </select>
-        </label>
+        <label for="letters">Letters?</label>
+        <select name="letters" id="letters">
+          <option value="yes">Yes</option>
+          <option value="no" selected="selected">No</option>
+        </select>
 
-        <label for="dashes"
-          >Dashes?
-          <select name="dashes" id="dashes">
-            <option value="yes">Yes</option>
-            <option value="no" selected="selected">No</option>
-          </select>
-        </label>
+        <label for="dashes">Dashes?</label>
+        <select name="dashes" id="dashes">
+          <option value="yes">Yes</option>
+          <option value="no" selected="selected">No</option>
+        </select>
 
-        <label for="negative"
-          >Negative?
-          <select name="negative" id="negative">
-            <option value="yes">Yes</option>
-            <option value="no" selected="selected">No</option>
-          </select>
-        </label>
+        <label for="negative">Negative?</label>
+        <select name="negative" id="negative">
+          <option value="yes">Yes</option>
+          <option value="no" selected="selected">No</option>
+        </select>
 
-        <input onclick="generateNumber()" type="button" value="Submit" />
+        <button onclick="generateNumber()" type="button" value="Submit">
+          Submit
+        </button>
       </form>
     </main>
     <footer>&copy; 2022 Holger Mueller</footer>
