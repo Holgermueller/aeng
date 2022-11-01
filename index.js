@@ -13,27 +13,34 @@ const generateNumber = () => {
   let earthNumber = "";
 
   if (isNegative === "yes" && hasLetters === "yes") {
-    earthNumber = dash + earthNumber + "- " + randLetter;
+    earthNumber = dash + earthNumber;
     for (let i = 0; i < numLength; i++) {
       earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
     }
+
+    numToDom = earthNumber + "-" + randLetter;
   } else if (isNegative === "yes") {
     earthNumber = dash + earthNumber;
     for (let i = 0; i < numLength; i++) {
       earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
     }
+
+    numToDom = earthNumber;
   } else if (hasLetters === "yes") {
     // earthNumber = earthNumber.concat("-" + randLetter);
     for (let i = 0; i < numLength; i++) {
       earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
     }
+
+    numToDom = earthNumber + "-" + randLetter;
   } else {
     for (let i = 0; i < numLength; i++) {
       earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
     }
+    numToDom = earthNumber;
   }
 
-  document.getElementById("numberDisplay").innerHTML = earthNumber;
+  document.getElementById("numberDisplay").innerHTML = numToDom;
 
   resetForm();
 };
