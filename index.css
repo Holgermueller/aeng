@@ -48,11 +48,11 @@ main {
   text-align: center;
   width: max-content;
   margin: 8px auto;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .form {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 65%;
   margin: 8px auto;
   border-radius: 5px;
@@ -72,6 +72,97 @@ button {
 
 select {
   border-width: 2px;
+}
+
+.submit {
+  border: none;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+}
+
+input:hover,
+select:hover,
+.submit:hover {
+  cursor: pointer;
+}
+
+.button-section {
+  text-align: center;
+}
+
+.about-button {
+  width: fit-content;
+  font-size: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 8px 16px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.about-button:hover {
+  color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  margin: 8px auto;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  border: 1px solid black;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  padding: 8px 16px;
+  margin: 25vh auto;
+  border-radius: 5px;
+  border: none;
+}
+
+.modal-content > p {
+  white-space: no-wrap;
+}
+
+.repo-link {
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.repo-link:hover {
+  color: aquamarine;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 footer {

@@ -48,11 +48,48 @@
           </select></label
         >
 
-        <button onclick="generateNumber()" type="button" value="Submit">
+        <button
+          class="submit"
+          onclick="generateNumber()"
+          type="button"
+          value="Submit"
+        >
           Submit
         </button>
       </form>
+
+      <section class="button-section">
+        <button class="about-button" id="modalButton" onclick="showModal()">
+          About
+        </button>
+      </section>
+
+      <div class="modal" id="myModal">
+        <div class="modal-content">
+          <p class="modal-text">
+            Hello, Esteemed Internet Wanderer, and welcome to this app!
+          </p>
+          <p>
+            It's basically a random number generator that's capable of
+            concatonating numbers, letters, and a symbol. I use it sometimes
+            when I'm writing.
+          </p>
+          <p>
+            If you'd like to know some more about it, not that's there's much
+            more to know, you can check out the repo here:
+            <a
+              target="_blank"
+              class="repo-link"
+              href="https://github.com/Holgermueller/aeng"
+              >REPO</a
+            >
+          </p>
+
+          <span onclick="hideModal()" id="span" class="close">CLOSE</span>
+        </div>
+      </div>
     </main>
+
     <footer>&copy; 2022 Holger Mueller</footer>
 
     <script src="./index.js"></script>
