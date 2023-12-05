@@ -27,7 +27,6 @@ const generateNumber = () => {
 
     numToDom = earthNumber;
   } else if (hasLetters === "yes") {
-    // earthNumber = earthNumber.concat("-" + randLetter);
     for (let i = 0; i < numLength; i++) {
       earthNumber += chars.charAt(Math.floor(Math.random() * chars.length));
     }
