@@ -64,3 +64,7 @@ const showModal = () => {
 const hideModal = () => {
   modal.style.display = "none";
 };
+
+let d = new Date();
+let year = d.getFullYear();
+document.getElementById("year").innerHTML = year;
